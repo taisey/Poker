@@ -188,7 +188,40 @@ class Poker(PlayCard):
 #play=Poker()
 #play.gamestart()  
         
-        
+class Player():
+    def __init__(self):
+        self.hand=[]
+        self.money=0
+        self.human=False
+    def gethand(self,hand):
+        self.hand=hand
+    def moneychange(self,money):
+        self.money=self.money+money
+    def showhand(self):
+        tmp_hand=self.hand
+        return tmp_hand
+    def is_human(self):
+        self.human=True
+    def showmoney(self):
+        return self.money
+    def drow(self,hand):
+        self.hand=self.hand+hand
+
+class Dealer():
+    def __init__(self):
+        self.hand=[]
+        self.money=0
+    def gethand(self,hand):
+        self.hand=hand
+    def moneychange(self,money):
+        self.money=self.money+money
+    def showhand(self,num):
+        tmp_hand=[]
+        for i in range(0,num):
+            tmp_hand.append(self.hand[i])
+        return tmp_hand
+    def drow(self,hand):
+        self.hand=self.hand+hand
         
         
     
